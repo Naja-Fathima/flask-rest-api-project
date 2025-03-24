@@ -15,11 +15,13 @@ import os
 from flask_jwt_extended import JWTManager
 from blocklist import BLOCKLIST
 from flask_migrate import Migrate
+from dotenv import load_dotenv
 
 # import secrets
 
 def create_app(db_url=None):
     app = Flask(__name__)
+    load_dotenv()
 
 
     app.config["PROPAGATE_EXCEPTIONS"] = True
